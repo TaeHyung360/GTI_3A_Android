@@ -1,4 +1,4 @@
-# GTI_3A_Arduino
+# GTI_3A_Android
 
 _En este repositorio se encuentra un programa de Android capaz de obtener a través de beacons con Bluetooth y subirlos a una base de datos._
 
