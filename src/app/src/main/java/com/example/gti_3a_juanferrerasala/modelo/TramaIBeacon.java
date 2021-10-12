@@ -1,4 +1,4 @@
-package com.example.gti_3a_juanferrerasala;
+package com.example.gti_3a_juanferrerasala.modelo;
 
 import java.util.Arrays;
 
