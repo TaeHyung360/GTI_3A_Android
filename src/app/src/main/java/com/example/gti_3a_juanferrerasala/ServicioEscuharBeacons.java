@@ -86,6 +86,7 @@ public class ServicioEscuharBeacons  extends IntentService {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onDestroy() " );
 
+        this.detenerBusquedaDispositivosBTLE();
 
         this.parar(); // posiblemente no haga falta, si stopService() ya se carga el servicio y su worker thread
     }
@@ -121,8 +122,8 @@ public class ServicioEscuharBeacons  extends IntentService {
                     //new Logica().insertarMedicion(medicion);
                 }
                 */
-                Medicion medicionEnviar = new  Medicion(new Ubicacion(3,4),1,3,1);
-                new Logica().insertarMedicion(medicionEnviar);
+                //Medicion medicionEnviar = new  Medicion(new Ubicacion(3,4),1,3,1);
+                //new Logica().insertarMedicion(medicionEnviar);
                 Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onHandleIntent: tras la espera:  " + contador );
                 contador++;
             }
@@ -202,7 +203,9 @@ public class ServicioEscuharBeacons  extends IntentService {
 
                 Medicion medicionEnviar = new  Medicion(new Ubicacion(3,4),1,Utilidades.bytesToInt(tib.getMinor()),1);
 
-                colaDeMediciones.add(medicionEnviar);
+                //colaDeMediciones.add(medicionEnviar);
+
+                new Logica().insertarMedicion(medicionEnviar);
             }
 
             @Override

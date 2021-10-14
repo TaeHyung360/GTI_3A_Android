@@ -14,7 +14,10 @@ public class Logica {
 
         PeticionarioREST elPeticionarioREST = new PeticionarioREST();
 
-        String restEndpoint = "http://192.168.85.84:8081/medicion";
+        // 192.168.1.114 ip portatil
+        // 192.168.85.84 ip pc sobremesa
+
+        String restEndpoint = "http://192.168.1.114:8081/medicion";
 
         Log.d("PRUEBA", "publicarMediciones endpoint: "+restEndpoint);
 
