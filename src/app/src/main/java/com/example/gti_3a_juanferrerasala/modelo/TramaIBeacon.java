@@ -2,9 +2,11 @@ package com.example.gti_3a_juanferrerasala.modelo;
 
 import java.util.Arrays;
 
-// -----------------------------------------------------------------------------------
-// @author: Jordi Bataller i Mascarell
-// -----------------------------------------------------------------------------------
+// ------------------------------------------------------------------
+//Nombre del fichero: TramaBeacon.java
+//Autor: Juan Ferrera Sala
+//Descripcion: Modelo que contiene los campos de la trama del beacon
+// ------------------------------------------------------------------
 public class TramaIBeacon {
     private byte[] prefijo = null; // 9 bytes
     private byte[] uuid = null; // 16 bytes

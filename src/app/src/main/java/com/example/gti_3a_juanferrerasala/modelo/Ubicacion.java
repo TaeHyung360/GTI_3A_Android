@@ -1,5 +1,11 @@
 package com.example.gti_3a_juanferrerasala.modelo;
 
+// ------------------------------------------------------------------
+//Nombre del fichero: Ubicacion
+//Autor: Juan Ferrera Sala
+//Descripcion: Modelo que contiene la ubicacion del modelo medicion
+// ------------------------------------------------------------------
+
 public class Ubicacion {
 
     private double latitud;

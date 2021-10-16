@@ -3,7 +3,11 @@ package com.example.gti_3a_juanferrerasala.modelo;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-
+// ------------------------------------------------------------------
+//Nombre del fichero: Medicion.java
+//Autor: Juan Ferrera Sala
+//Descripcion: Modelo que contiene todos los datos de medicion
+// ------------------------------------------------------------------
 public class Medicion {
 
     private static final String FECHA_FROMATO = "yyyy-MM-dd hh:mm:ss";
@@ -40,7 +44,6 @@ public class Medicion {
                 "}";
 
         return res;
-
 
     }
 }

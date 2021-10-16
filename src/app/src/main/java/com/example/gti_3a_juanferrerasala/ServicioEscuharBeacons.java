@@ -19,8 +19,11 @@ import com.example.gti_3a_juanferrerasala.modelo.Ubicacion;
 import java.util.ArrayList;
 import java.util.List;
 
-// -------------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------
+//Nombre del fichero: ServicioEscucharBeacons.java
+//Autor: Juan Ferrera Sala
+//Descripcion: Servicio encargado de escuchar beacons en todo momento
+// ------------------------------------------------------------------
 public class ServicioEscuharBeacons  extends IntentService {
 
     // ---------------------------------------------------------------------------------------------
@@ -38,9 +41,9 @@ public class ServicioEscuharBeacons  extends IntentService {
     // ---------------------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------
     private ArrayList<Medicion> colaDeMediciones;
+
     public ServicioEscuharBeacons(  ) {
         super("HelloIntentService");
-
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.constructor: termina");
     }
 
@@ -64,6 +67,12 @@ public class ServicioEscuharBeacons  extends IntentService {
 
     // ---------------------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------
+    /**
+     *  Funcion para parar el servicio
+     *
+     *  Diseño: parar() ->
+     *
+     */
     public void parar () {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.parar() " );
@@ -140,10 +149,16 @@ public class ServicioEscuharBeacons  extends IntentService {
 
         Log.d(ETIQUETA_LOG, " ServicioEscucharBeacons.onHandleItent: termina");
 
+    } //()
 
-
-    }
-
+    /**
+     * Funcion para inicializar el servicio y pasar el texto del dispositivo del que se desean leer datos
+     *
+     * @param intent parametro del intento del que se toma "nombreDelDispositivo"
+     *
+     * Diseño: texto -> constructor() ->
+     *
+     */
     private void inicializarServicio(Intent intent) {
         colaDeMediciones = new ArrayList<>();
         this.tiempoDeEspera = intent.getLongExtra("tiempoDeEspera", /* default */ 50000);
@@ -152,8 +167,14 @@ public class ServicioEscuharBeacons  extends IntentService {
         Log.d(ETIQUETA_LOG, " dispositivoEscuchando=" + dispositivoEscuchando );
         inicializarBlueTooth();
         buscarEsteDispositivoBTLE(dispositivoEscuchando);
-    }
+    } //()
 
+    /**
+     *  Funcion para inicializar el BlueTooth
+     *
+     *  Diseño: iniciarBlueTooth()->
+     *
+     */
     private void inicializarBlueTooth() {
         Log.d(ETIQUETA_LOG, " inicializarBlueTooth(): obtenemos adaptador BT ");
 
@@ -181,6 +202,14 @@ public class ServicioEscuharBeacons  extends IntentService {
 
     } // ()
 
+    /**
+     * Funcion para buscar el dispositivo BTLE que el usuario le pasa desde el campo de texto
+     *
+     * @param dispositivoBuscado el nombre del dispositivo a buscar
+     *
+     * Diseño: dispositivoBuscado: string -> buscarEsteDispositivoBTLE() ->
+     *
+     */
     private void buscarEsteDispositivoBTLE(final String dispositivoBuscado ) {
         Log.d(ETIQUETA_LOG, " buscarEsteDispositivoBTLE(): empieza ");
 
@@ -239,6 +268,12 @@ public class ServicioEscuharBeacons  extends IntentService {
         this.elEscanner.startScan(filters,settings,this.callbackDelEscaneo);
     } // ()
 
+    /**
+     * Funcion para destener la busqueda de dispositivos
+     *
+     * Diseño: detenerBusquedaDispositivosBTLE()->
+     *
+     */
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     private void detenerBusquedaDispositivosBTLE() {
@@ -252,6 +287,12 @@ public class ServicioEscuharBeacons  extends IntentService {
 
     } // ()
 
+    /**
+     * Funcion para mostrar por consola toda la informacion obtenida de la trama
+     *
+     * Diseño: mostrarInformacionDispositivoBTLE() <-
+     *
+     */
     // --------------------------------------------------------------
     // --------------------------------------------------------------
     private void mostrarInformacionDispositivoBTLE( ScanResult resultado ) {

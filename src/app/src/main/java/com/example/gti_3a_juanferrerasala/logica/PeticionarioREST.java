@@ -9,9 +9,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import android.os.AsyncTask;
 import android.util.Log;
-
-// ------------------------------------------------------------------------
-// ------------------------------------------------------------------------
+// ------------------------------------------------------------------
+//Nombre del fichero: MainActivity.java
+//Autor: Juan Ferrera Sala
+// ------------------------------------------------------------------
 
 public class PeticionarioREST extends AsyncTask<Void, Void, Boolean> {
 
@@ -33,7 +34,17 @@ public class PeticionarioREST extends AsyncTask<Void, Void, Boolean> {
 
     // --------------------------------------------------------------------
     // --------------------------------------------------------------------
-
+    /**
+     *  Funcion para poder realizar una peticion rest
+     *
+     * @param metodo puede ser GET/POST/PUT
+     * @param urlDestino como indica el nombre es la direccion del destino del menseje
+     * @param cuerpo cuerpo del mensaje
+     * @param laRespuesta respuesta del servidor
+     *
+     *  Diseño: String metodo, String urlDestino, String cuerpo, RespuestaREST  laRespuesta -> hacerPeticionREST()
+     *
+     */
     public void hacerPeticionREST (String metodo, String urlDestino, String cuerpo, RespuestaREST  laRespuesta) {
         this.elMetodo = metodo;
         this.urlDestino = urlDestino;

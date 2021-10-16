@@ -4,9 +4,11 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.UUID;
 
-// -----------------------------------------------------------------------------------
-// @author: Jordi Bataller i Mascarell
-// -----------------------------------------------------------------------------------
+// ------------------------------------------------------------------
+//Nombre del fichero: Utilidades.java
+//Autor: Juan Ferrera Sala
+//Descripcion: Clase que permite tener diversas herramientas de conversion para tratar datos
+// ------------------------------------------------------------------
 public class Utilidades {
 
     // -------------------------------------------------------------------------------

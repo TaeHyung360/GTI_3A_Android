@@ -21,8 +21,9 @@ import androidx.core.content.ContextCompat;
 
 import java.util.List;
 import java.util.UUID;
-
 // ------------------------------------------------------------------
+//Nombre del fichero: MainActivity.java
+//Autor: Juan Ferrera Sala
 // ------------------------------------------------------------------
 
 public class MainActivity extends AppCompatActivity {
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
     private static final int CODIGO_PETICION_PERMISOS = 11223344;
     // --------------------------------------------------------------
     // --------------------------------------------------------------
+    /**
+     *  Funcion para al pulsar el boton de arrancar servicios este se ejecute
+     *
+     * @param v parametro de la actividad
+     *
+     *  Diseño: View -> btnArrancarServicioPulsado() ->
+     *
+     */
     public void botonArrancarServicioPulsado( View v ) {
 
         Log.d(ETIQUETA_LOG, " boton arrancar servicio Pulsado" );
@@ -67,7 +76,14 @@ public class MainActivity extends AppCompatActivity {
 
     // ---------------------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------
-
+    /**
+     * Funcion para al pulsar el boton de arrancar servicios este se ejecute
+     *
+     * @param v parametro de la actividad
+     *
+     * Diseño: View -> btnDetenerServicioPulsado() ->
+     *
+     */
     public void botonDetenerServicioPulsado( View v ) {
 
         if ( this.elIntentDelServicio == null ) {
@@ -90,7 +106,10 @@ public class MainActivity extends AppCompatActivity {
 
         nombreDispositivoEditText = findViewById(R.id.nombreDispositivoEditText);
 
-    }
+    } // ()
+
+    // --------------------------------------------------------------
+    // --------------------------------------------------------------
     private void inicializarPermisosBluetooth() {
         if (
                 ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED
@@ -105,7 +124,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d(ETIQUETA_LOG, " inicializarBlueTooth(): parece que YA tengo los permisos necesarios !!!!");
 
         }
-    }
+    }// ()
+
+    // --------------------------------------------------------------
+    // --------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

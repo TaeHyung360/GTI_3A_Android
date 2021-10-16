@@ -3,13 +3,24 @@ package com.example.gti_3a_juanferrerasala.logica;
 import android.util.Log;
 
 import com.example.gti_3a_juanferrerasala.modelo.Medicion;
+// ------------------------------------------------------------------
+//Nombre del fichero: Logica.js
+//Autor: Juan Ferrera Sala
+// ------------------------------------------------------------------
 
 public class Logica {
 
     public Logica(){
 
     }
-
+    /**
+     *  Funcion para poder insertar medicion en la base de datos
+     *
+     * @param medicion parametro de la actividad
+     *
+     *  Diseño: Medicion -> insertarMedicion()
+     *
+     */
     public void insertarMedicion(Medicion medicion){
 
         PeticionarioREST elPeticionarioREST = new PeticionarioREST();
@@ -17,7 +28,7 @@ public class Logica {
         // 192.168.1.114 ip portatil
         // 192.168.85.84 ip pc sobremesa
 
-        String restEndpoint = "http://192.168.1.114:8081/medicion";
+        String restEndpoint = "http://192.168.85.242:8081/medicion";
 
         Log.d("PRUEBA", "publicarMediciones endpoint: "+restEndpoint);
 
