@@ -252,7 +252,7 @@ public class ServicioEscuharBeacons  extends IntentService {
             }
         };
 
-        List<ScanFilter> filters = new ArrayList<>();;
+        List<ScanFilter> filters = new ArrayList<>();
         ScanFilter sf = new ScanFilter.Builder().setDeviceName( dispositivoBuscado ).build();
         filters.add(sf);
 
